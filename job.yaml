@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: statics-refresher
+spec:
+  ttlSecondsAfterFinished: 6000
+  template:
+    spec:
+      containers:
+        - name: statics-refresher
+          image: anoikis/static_cacher
+          imagePullPolicy: Always
+          env:
+            - name: PUBLIC_PATH
+              value: https://cdn.statically.io/gh/laima-app/statics/LoA6aFIkxQtv
+            - name: REDIS_HOST
+              value: laima-helm-redis-master
+            - name: REDIS_DB
+              value: "3"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              value: jUnvuN30jMkdl
+      restartPolicy: Never
+  backoffLimit: 4
