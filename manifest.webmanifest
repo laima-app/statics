@@ -1,0 +1,12 @@
+{
+    "short_name": "Laima.app",
+    "name": "Laima.app",
+    "icons": [{
+        "src": "https://cdn.statically.io/gh/laima-app/laimafront/dev/logo192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }],
+    "theme_color": "#fff",
+    "background_color": "#fff",
+    "display": "standalone"
+}
